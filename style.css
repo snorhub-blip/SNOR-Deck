@@ -26,24 +26,40 @@ button {
 .apps div {
   border: 2px solid #00ff00;
   padding: 12px;
-  width: 100px;
+  width: 90px;
   cursor: grab;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 80px 80px;
-  gap: 12px;
+  grid-template-columns: 100px 100px;
+  gap: 18px;
   justify-content: center;
   margin-top: 20px;
 }
 
 .slot {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border: 2px solid #00ff00;
+  border-radius: 12px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.slot img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  display: none;
+}
+
+.slot span {
+  font-size: 11px;
 }
