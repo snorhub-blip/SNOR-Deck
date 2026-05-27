@@ -6,12 +6,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>SNOR App Manager</h1>
 
-  <button onclick="connectDevice()">Connect Device</button>
-  <button onclick="saveToDevice()">Save To SNOR</button>
+  <button onclick="connectDevice()">CONNECT</button>
+  <button onclick="saveToDevice()">SAVE</button>
 
-  <h2>Apps</h2>
   <div class="apps">
     <div draggable="true" ondragstart="drag(event)" data-name="EDGE">EDGE</div>
     <div draggable="true" ondragstart="drag(event)" data-name="DISCORD">DISCORD</div>
@@ -19,24 +17,75 @@
     <div draggable="true" ondragstart="drag(event)" data-name="FILES">FILES</div>
     <div draggable="true" ondragstart="drag(event)" data-name="TASK">TASK</div>
     <div draggable="true" ondragstart="drag(event)" data-name="ARDUINO">ARDUINO</div>
-    <div draggable="true" ondragstart="drag(event)" data-name="VS CODE">VS CODE</div>
+    <div draggable="true" ondragstart="drag(event)" data-name="VS">VS</div>
     <div draggable="true" ondragstart="drag(event)" data-name="SETTINGS">SETTINGS</div>
   </div>
 
-  <h2>Device Screen</h2>
   <div class="grid">
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
+    <div class="slot"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)">
+      <img>
+      <span></span>
+    </div>
+
   </div>
 
-  <p id="status">Not connected</p>
+  <input type="file" id="imagePicker" accept="image/*" hidden>
+
+  <p id="status">NOT CONNECTED</p>
 
   <script src="app.js"></script>
+
 </body>
 </html>
