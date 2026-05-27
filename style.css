@@ -1,0 +1,49 @@
+body {
+  background: #000;
+  color: #00ff00;
+  font-family: monospace;
+  text-align: center;
+}
+
+button {
+  background: #00ff00;
+  color: #000;
+  border: 0;
+  padding: 12px 18px;
+  margin: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.apps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.apps div {
+  border: 2px solid #00ff00;
+  padding: 12px;
+  width: 100px;
+  cursor: grab;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 80px 80px;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.slot {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #00ff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
