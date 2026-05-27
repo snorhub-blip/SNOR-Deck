@@ -4,6 +4,12 @@ let writer;
 let draggedName = "";
 let currentSlot = null;
 
+const defaultIcon =
+  "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" +
+  "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" +
+  "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" +
+  "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
+
 function drag(ev) {
   draggedName = ev.target.dataset.name;
 }
@@ -17,6 +23,12 @@ function drop(ev) {
 
   currentSlot = ev.currentTarget;
   currentSlot.querySelector("span").innerText = draggedName;
+
+  currentSlot.dataset.icon = defaultIcon;
+
+  const preview = currentSlot.querySelector("img");
+  preview.style.display = "none";
+  preview.src = "";
 
   document.getElementById("imagePicker").value = "";
   document.getElementById("imagePicker").click();
@@ -43,7 +55,7 @@ function imageToMonoHex(img) {
 
     const brightness = (r + g + b) / 3;
 
-    bits += (a > 40 && brightness > 70) ? "1" : "0";
+    bits += (a > 20 && brightness < 245) ? "1" : "0";
   }
 
   let hex = "";
@@ -106,10 +118,12 @@ async function saveToDevice() {
   let data = [];
 
   slots.forEach((slot, index) => {
+    const name = slot.querySelector("span").innerText.trim();
+
     data.push({
       slot: index,
-      name: slot.querySelector("span").innerText.trim(),
-      icon: slot.dataset.icon || ""
+      name: name,
+      icon: slot.dataset.icon || (name ? defaultIcon : "")
     });
   });
 
